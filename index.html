@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a497a0fb12.js" crossorigin="anonymous"></script>
+  <!--- animate om scroll css cdn link----> 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+ 
+    <title>Page title</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />   
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root{
+            --greyishblack:#202124;
+            --white:#ffffff;
+            --black:#000000;
+        }
+        
+        body{
+            background-color:var(--greyishblack);
+            color:white; 
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+           
+        }
+       
+            
+        
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            box-shadow:0 1px 2px 0 black;
+            align-items: center;
+            background-color: var(--greyishblack);
+            width: 100%;
+            height: 50px;
+           padding-right: 10px; 
+           position: fixed;
+          top: 0;
+          left:0;
+          z-index:100;
+            
+        }
+        
+        header img{
+            padding: 40px 0 0 5px;
+            width: 220px;
+        }        
+        
+       nav ul.nav-list{
+            display: flex;
+            list-style-type: none;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap:40px;
+        }
+        
+       
+        
+  nav ul.nav-list li.nav-item a.nav-link{
+            font-weight: 500;
+            padding:5px 3px;
+            text-decoration: none;
+            color: var(--white);                                
+        }
+        
+    nav ul.nav-list li.nav-item a.nav-link:hover{
+        color:#09AE92;
+    }      
+   
+   nav ul.nav-list li.nav-item i{
+      display: none; 
+   } 
+  ul.social-nav{
+       display: none;
+   }
+         /*Toggle*/
+    div.menuToggle{
+        width:50px;
+        height: 25px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+         position: relative;
+         overflow: hidden;
+         display:none;
+    }
+ .menuToggle span{
+    position: absolute;
+      width: 20px;    
+      height: 2px;
+      background-color:var(--white);
+      border-radius: 15px;
+        transition:0.5s ease-in;
+    }
+  .menuToggle  span:nth-child(1){
+    transform: translateY(-7px);
+      left: 10px;
+      transition-delay: 0.25s;
+    }
+ .menuToggle   span:nth-child(2){
+      width: 30px;
+    }
+  .menuToggle  span:nth-child(3){
+      transform: translateY(7px);
+      left: 10px;
+      transition-delay: 0.125s;
+     
+    }
+    
+   .activeToggle span:nth-child(1){
+      transform:translateY(0) rotateZ(45deg);
+      height: 3px;
+    }
+   .activeToggle span:nth-child(2){
+     transform: translateX(60px);
+    }
+   .activeToggle span:nth-child(3){
+     transform:translateY(0) rotateZ(-45deg);
+     height: 3px;
+    }
+    
+     div.brand{
+       background: url('graphic/brandi.jpg'); 
+       background-size: cover;
+       background-repeat: no-repeat;
+       bckground-position: center;
+       width: 100vw;
+       min-height:450px;
+    }
+    
+    div.containe{
+        border: 2px solid black;
+        background: black;
+        margin: 7px auto;
+        width: 90%; 
+        height: auto;
+        padding: 16px 10px; 
+        border-radius: 10px;
+        
+             }
+            
+    
+      div.containe  img{
+            width: 100%;
+            height: auto;
+            user-select: none;
+        }
+        
+ div.containe .swiper-pagination-bullet-active{
+            background-color: white;
+        }
+        
+   div.containe a{
+           text-decoration: none;
+           background: #00ecff;    
+           padding: .5em 3em;   
+           border-radius: 5px;                         
+       }
+    
+    /*Toggle end*/
+    
+            
+    @media(max-width:500px){
+  
+            div.menuToggle{
+            display: flex;
+        }            
+        nav{
+   background-color: var(--greyishblack);        
+   width: 250px;
+   height:100%;
+   display: block;
+   position: fixed;
+   top: 50px;
+   color: (--white);
+   box-shadow:0 1px 4px 0 black;
+   left: -250px;
+   transition:left 0.5s ease-in;   
+   
+     }
+     .active{
+         left: 0;
+     }
+    
+   nav ul.nav-list{
+   display: block; 
+   }
+   
+   nav ul.nav-list li.nav-item{
+     line-height: 1.6;   
+      
+   }
+   
+    nav ul.nav-list li.nav-item a.nav-link{  
+    font-weight: 300;
+    display: block;
+    color: var(--white);
+    border-left: 5px solid var(--greyishblack);
+   transition: 0.5s ;     
+   
+    } 
+      
+   nav ul.nav-list li.nav-item a.nav-link:hover{
+        color:goldenrod;
+    }      
+   nav ul.nav-list li.nav-item a.nav-link:active{
+     padding-left: 35px;
+     border-left-color: lawngreen;
+     font-weight: 700;
+     color: goldenrod;
+   }
+   
+   
+   nav ul.nav-list li.nav-item i{
+   display: inline;
+      color: #09AE92;
+      padding: 5px;
+   } 
+   
+  ul.social-nav{
+      list-style-type: none;
+      width: 250px;
+      padding: 5px 10px;
+      position: fixed;
+      bottom: 0;
+      border-top:1px solid white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;           
+  }
+   ul.social-nav a{
+      text-decoration: none;      
+  }
+        
+  ul.social-nav i{
+      font-size: 1.7em;   
+      padding:2px 7px;
+  }
+   div.brand{       
+       margin-top: 40px;
+       min-height:200px;
+    } 
+    
+     
+  
+   
+}
+main{
+    width: 100%;
+    height: auto;
+}
+
+
+main div.container{
+   
+    boder: 2px solid red;
+    padding:0.7em 0.45em;
+  
+}
+  
+  
+  
+  
+  div.section-one{
+      brder: 2px solid red;
+      pading:6px 10px;
+      magin:0 0.15em;
+      
+  }
+  
+  div.section-one h3{
+      text-transform: capitalize;
+      color: var(--white);
+      text-align: center;
+      font-weight: 600;
+  }
+  
+  div.section-one p{
+  
+      
+  }
+   div.section-one span{
+      font-weight: 600;
+  }
+  
+  div.section-two{
+      brder: 2px solid red;
+      padding: 5px 0px;
+      
+  }
+  
+  div.section-two a {
+      display: block;
+      background-image: linear-gradient(#00ad9c,#006e64);
+      text-decoration: none;
+      font-weight:400 ;
+      text-align: center;
+      color: white;
+      width: 85%;
+      margin:0.4em auto;
+      padding: 1.4rem 2rem;
+      border-radius:1.2rem;
+      box-shadow:inset 0 7px 6px #0C0C0C;
+  }
+  
+  div.services{
+      
+  }
+  div.services h3{
+      display: block;     
+      border: 2px solid black;      
+      font-weight:400 ;
+      text-align: center;
+      color: white;
+      width: 85%;
+      margin:0.4em auto;
+      padding: 1.4rem 2rem;
+      border-radius:1.2rem;
+      box-shadow: 0 7px 6px #0C0C0C;      
+  }
+  
+  video{
+            
+            width: 100%;
+             height:auto;          
+        }  
+    </style>
+</head>
+<body>
+    <header>      
+     <img src="graphic/logor.png" alt="">
+           
+         <nav class="nav-menu"> 
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-house"></i>Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-briefcase"></i>Portfolio</a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fa-regular fa-address-book"></i>Contact Us</a></li> 
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-circle-info"></i>About Us</a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-star-half-stroke"></i>Ratings And Reviews</a></li>
+      </ul>
+
+     <ul class="social-nav">  
+    <li><a href="#"><i style="color:#1DA1F3" class="fa-brands fa-twitter"></i></a></li>  
+      <li><a href="#"><i style="color:#ff7f6a" class="fa-brands fa-instagram"></i></a></li>
+    <li><a href="#"><i style="color:#1878F1" class="fa-brands fa-facebook"></i></a></li>      
+  </ul>
+   
+    </nav>
+        
+     
+   <div class="menuToggle">
+     <span></span>
+    <span></span>
+    <span></span>
+        </div>
+    </header>
+    
+ <main>
+   
+     <div class="brand"></div>
+       <div class="container">
+     <div class="section-one">
+   <h3>welcome to tobez media!</h3>         <p>Tobez Creative media is a simple, unincorporated business entity owned by <span>Badmus Abass.</span>
+This media was developed so as to help business owners and companies to boost their sales and reach more audience with amazing and eye catchy designs. We consider ourselves privileged to have worked with small startup businesses to multinational organizations  Whether we are working on corporate branding, or running a social media marketing campaign, our service is derived by two core values which are Quality and Value for Money.</p>
+     </div>
+     
+     
+     <div class="section-two">
+         <a href="#">View Portfolio</a>
+     </div>
+     <p>A portfolio is a great way  to show and not just tell evidence of a designer's relevant skills and abilities. 
+Click the button above to view some of  my recent projects with various clients and niches.</p>
+  </div>
+  <div class="services">
+      <h3>Our Services</h3>
+  </div>
+ <form name="contact" method="POST" data-netlify="true"> 
+       <div>
+        <input name="name" type="text" id="name">                 
+       </div>
+       
+       <div>
+         <input name="Gmail" type="email" id="gmail">    
+       </div>
+         
+     <div>
+    <textarea name="message" id="message"></textarea>     
+     </div>
+  <div>
+      <div data-netlify-recaptcha="true"></div>
+  </div>       
+      
+       
+       <input type="submit" value="submit">
+   </form> 
+ 
+ </main>
+     <script  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>  
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+
+   <script> 
+  
+        
+
+ let menu = document.querySelector("nav");
+ let toggleButton = document.querySelector(".menuToggle");
+  
+
+toggleButton.addEventListener("click" ,
+ function () {
+toggleButton.classList.toggle("activeToggle");
+menu.classList.toggle("active");
+             })
+           
+  </script>
+  
+</body>
+</html>
