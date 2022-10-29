@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page title</title>
+</head>
+<body>
+    <form action="">
+       <input type="password" name="password" id="password"> 
+       <input type="submit" value="submit" onclick="auth()">
+    </form>
+    
+    <script>
+        
+        function auth () {
+            let password = document.getElementById("password").value;
+            if (password === "adeyemi") {
+            window.location.assign("submit.html");
+            alert("login successfully")  
+            }else {
+                alert("invalid user");
+              
+            }
+        }
+        
+    </script>
+</body>
+</html>
